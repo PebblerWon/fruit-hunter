@@ -38,7 +38,7 @@ export function useGame() {
     toast.loading(0);
     game.running();
     const [houseStakeCoin] = txb.splitCoins(txb.gas, [
-      (MIST_PER_SUI * BigInt(1)) / 10n,
+      (MIST_PER_SUI * BigInt(1)) / BigInt(10),
     ]);
     const [gameid] = txb.moveCall({
       target: `${TESTNET_PACKAGE_ID}::play::start_game`,
